@@ -17,5 +17,5 @@ export default function Header() {
         Hello Daily Todos App
       </h1>
     </div>
-  )
+  );
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
-import Header  from './Header';
+import Header from './Header';
 import InputTodo from './InputTodo';
 
 export default class TodoContainer extends Component {
@@ -34,36 +34,38 @@ export default class TodoContainer extends Component {
   }
 
   handleChanges = (id) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
             completed: !todo.completed,
-          }
+          };
         }
-        return todo
+        return todo;
       }),
     }));
   }
+
   deleteTodo = (id) => {
-    this.setState({
+    this.setState(() => ({
       todos: [
         ...this.state.todos.filter((todo) => {
           return todo.id !== id;
-        })
+        }),
       ],
-    });
+    }));
   }
+
   addNewTodo = (title) => {
     const newTodo = {
       id: uuidv4(),
       title: title,
       completed: false,
     }
-    this.setState({
+    this.setState(() => ({
       todos: [...this.state.todos, newTodo],
-    })
+    }));
   }
 
   render() {
@@ -79,6 +81,6 @@ export default class TodoContainer extends Component {
           />
         </div>
       </div>
-    )
+    );
   }
 }

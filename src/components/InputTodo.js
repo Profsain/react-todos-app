@@ -5,7 +5,7 @@ export default class InputTodo extends Component {
     super(props);
     this.state = {
       title: '',
-    }
+    };
   }
 
   // form input handler
@@ -22,19 +22,18 @@ export default class InputTodo extends Component {
       this.setState({
         title: '',
       });
-    } else {
-      alert("Please enter a todos items");
     }
   }
 
   render() {
+    const title = this.state.title;
     return (
       <form onSubmit={this.onSubmitHandler}>
         <input
           className="input-text"
           type="text"
           placeholder="Add New Todos......"
-          value={this.state.title}
+          value={title}
           onChange={this.onChangeHandler}
         />
         <button type="submit" className="input-submit">Submit</button>
