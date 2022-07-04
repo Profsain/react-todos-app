@@ -20,9 +20,9 @@ const TodosList = (props) => {
       </ul>
     </div>
   );
-}
+};
 
-TodosList.protoTypes = {
+TodosList.propTypes = {
   todos: PropTypes.array.isRequired,
   handleChangesProp: PropTypes.func.isRequired,
   handleDeleteTodo: PropTypes.func.isRequired,

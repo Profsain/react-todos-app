@@ -31,7 +31,7 @@ const TodosItem = (props) => {
 TodosItem.propTypes = {
   handleChangeProp: PropTypes.func.isRequired,
   handleDeleteTodo: PropTypes.func.isRequired,
-  todo: PropTypes.objectOf(PropTypes.object()),
+  todo: PropTypes.objectOf(PropTypes.object()).isRequired,
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
