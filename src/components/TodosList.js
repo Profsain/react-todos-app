@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import TodosItem from './TodosItem';
-import PropTypes from 'prop-types'
 
 export default function TodosList(props) {
   const { todos, handleChangesProp, handleDeleteTodo } = props;
@@ -25,4 +25,5 @@ export default function TodosList(props) {
 TodosList.protoTypes = {
   todos: PropTypes.array,
   handleChangesProp: PropTypes.func,
-  handleDeleteTodo: PropTypes.func }
+  handleDeleteTodo: PropTypes.func
+};

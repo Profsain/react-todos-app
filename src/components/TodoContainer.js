@@ -30,7 +30,7 @@ export default class TodoContainer extends Component {
           completed: true,
         },
       ],
-    }
+    };
   }
 
   handleChanges = (id) => {
@@ -48,9 +48,9 @@ export default class TodoContainer extends Component {
   }
 
   deleteTodo = (id) => {
-    this.setState(() => ({
+    this.setState((prevState) => ({
       todos: [
-        ...this.state.todos.filter((todo) => {
+        ...prevState.todos.filter((todo) => {
           return todo.id !== id;
         }),
       ],
@@ -63,8 +63,8 @@ export default class TodoContainer extends Component {
       title: title,
       completed: false,
     }
-    this.setState(() => ({
-      todos: [...this.state.todos, newTodo],
+    this.setState((prevState) => ({
+      todos: [...prevState.todos, newTodo],
     }));
   }
 

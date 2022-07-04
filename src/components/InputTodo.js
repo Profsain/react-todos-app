@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class InputTodo extends Component {
   constructor(props) {
@@ -16,9 +17,10 @@ export default class InputTodo extends Component {
   }
 
   onSubmitHandler = (event) => {
+    const { title } = this.state;
     event.preventDefault();
-    if (this.state.title.trim()) {
-      this.props.addNewTodoProps(this.state.title);
+    if (title.trim()) {
+      this.props.addNewTodoProps(title);
       this.setState({
         title: '',
       });
@@ -26,7 +28,7 @@ export default class InputTodo extends Component {
   }
 
   render() {
-    const title = this.state.title;
+    const { title }  = this.state.title;
     return (
       <form onSubmit={this.onSubmitHandler}>
         <input
@@ -40,4 +42,8 @@ export default class InputTodo extends Component {
       </form>
     );
   }
+}
+
+InputTodo.propTypes = {
+  addNewTodoProps: PropTypes.func.isRequired,
 }
