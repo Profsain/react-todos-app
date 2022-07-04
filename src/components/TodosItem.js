@@ -2,6 +2,8 @@ import React from 'react';
 import styles from "./TodoItem.module.css"
 
 const TodosItem = (props) => {
+  const {id, title, completed} = props.todo;
+
   const completedStyle = {
     fontStyle: "italic",
     color: "#595959",
@@ -14,13 +16,13 @@ const TodosItem = (props) => {
       <input
         className={styles.checked}
         type="checkbox"
-        checked={props.todo.completed}
-        onChange={() => props.handleChangeProp(props.todo.id)}
+        checked={completed}
+        onChange={() => props.handleChangeProp(id)}
       />
-      <span style={props.todo.completed ? completedStyle : null}>
-        {props.todo.title}
+      <span style={completed ? completedStyle : null}>
+        {title}
       </span>
-      <button onClick={() => props.handleDeleteTodo(props.todo.id)}>Delete</button>
+      <button onClick={() => props.handleDeleteTodo(id)}>Delete</button>
     </li>
   )
 }
