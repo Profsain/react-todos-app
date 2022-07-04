@@ -18,9 +18,10 @@ export default class InputTodo extends Component {
 
   onSubmitHandler = (event) => {
     const { title } = this.state;
+    const { addNewTodoProps } = this.props;
     event.preventDefault();
     if (title.trim()) {
-      this.props.addNewTodoProps(title);
+      addNewTodoProps(title);
       this.setState({
         title: '',
       });
@@ -28,7 +29,7 @@ export default class InputTodo extends Component {
   }
 
   render() {
-    const { title }  = this.state.title;
+    const { title } = this.state;
     return (
       <form onSubmit={this.onSubmitHandler}>
         <input
@@ -46,4 +47,4 @@ export default class InputTodo extends Component {
 
 InputTodo.propTypes = {
   addNewTodoProps: PropTypes.func.isRequired,
-}
+};

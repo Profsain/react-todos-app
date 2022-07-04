@@ -23,7 +23,7 @@ export default function TodosList(props) {
 }
 
 TodosList.protoTypes = {
-  todos: PropTypes.array,
-  handleChangesProp: PropTypes.func,
-  handleDeleteTodo: PropTypes.func
+  todos: PropTypes.array.isRequired,
+  handleChangesProp: PropTypes.func.isRequired,
+  handleDeleteTodo: PropTypes.func.isRequired,
 };

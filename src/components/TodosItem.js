@@ -4,7 +4,7 @@ import styles from './TodoItem.module.css';
 
 const TodosItem = (props) => {
   const { todo, handleChangeProp, handleDeleteTodo } = props;
-  const { id, title, completed} = props.todo;
+  const { id, title, completed } = todo;
   const completedStyle = {
     fontStyle: 'italic',
     color: '#595959',
@@ -31,9 +31,10 @@ const TodosItem = (props) => {
 TodosItem.propTypes = {
   handleChangeProp: PropTypes.func.isRequired,
   handleDeleteTodo: PropTypes.func.isRequired,
+  todo: PropTypes.object.isRequired,
   id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  completed: PropTypes.bool.isRequired
-}
+  completed: PropTypes.bool.isRequired,
+};
 
 export default TodosItem;

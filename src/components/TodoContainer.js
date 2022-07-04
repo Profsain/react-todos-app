@@ -50,9 +50,7 @@ export default class TodoContainer extends Component {
   deleteTodo = (id) => {
     this.setState((prevState) => ({
       todos: [
-        ...prevState.todos.filter((todo) => {
-          return todo.id !== id;
-        }),
+        ...prevState.todos.filter((todo) => todo.id !== id),
       ],
     }));
   }
@@ -60,22 +58,23 @@ export default class TodoContainer extends Component {
   addNewTodo = (title) => {
     const newTodo = {
       id: uuidv4(),
-      title: title,
+      title,
       completed: false,
-    }
+    };
     this.setState((prevState) => ({
       todos: [...prevState.todos, newTodo],
     }));
   }
 
   render() {
+    const todosList = this.state;
     return (
       <div className="container">
         <div className="inner">
           <Header />
           <InputTodo addNewTodoProps={this.addNewTodo} />
           <TodosList
-            todos={this.state.todos}
+            todos={todosList.todos}
             handleChangesProp={this.handleChanges}
             handleDeleteTodo={this.deleteTodo}
           />
