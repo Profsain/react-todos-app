@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TodosItem from './TodosItem';
 
-export default function TodosList(props) {
+const TodosList = (props) => {
   const { todos, handleChangesProp, handleDeleteTodo } = props;
   return (
     <div>
@@ -27,3 +27,5 @@ TodosList.protoTypes = {
   handleChangesProp: PropTypes.func.isRequired,
   handleDeleteTodo: PropTypes.func.isRequired,
 };
+
+export default TodosList;
