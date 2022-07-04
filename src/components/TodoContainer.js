@@ -1,34 +1,38 @@
 import React, { Component } from 'react';
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
-import { Header } from './Header';
+import Header  from './Header';
 import InputTodo from './InputTodo';
 
 export default class TodoContainer extends Component {
-  state = {
-    todos: [
-      {
-        id: uuidv4(),
-        title: "Setup development environment",
-        completed: true,
-      },
-      {
-        id: uuidv4(),
-        title: "Develop website and add content",
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: "Deploy to live server",
-        completed: false,
-      },
-      {
-        id: uuidv4(),
-        title: "Go for lounch break",
-        completed: true,
-      },
-    ],
+  constructor(props) {
+    super(props);
+    this.state = {
+      todos: [
+        {
+          id: uuidv4(),
+          title: 'Setup development environment',
+          completed: true,
+        },
+        {
+          id: uuidv4(),
+          title: 'Develop website and add content',
+          completed: false,
+        },
+        {
+          id: uuidv4(),
+          title: 'Deploy to live server',
+          completed: false,
+        },
+        {
+          id: uuidv4(),
+          title: 'Go for lounch break',
+          completed: true,
+        },
+      ],
+    }
   }
+
   handleChanges = (id) => {
     this.setState(prevState => ({
       todos: prevState.todos.map((todo) => {
@@ -40,7 +44,7 @@ export default class TodoContainer extends Component {
         }
         return todo
       }),
-    }))
+    }));
   }
   deleteTodo = (id) => {
     this.setState({
@@ -49,7 +53,7 @@ export default class TodoContainer extends Component {
           return todo.id !== id;
         })
       ],
-    })
+    });
   }
   addNewTodo = (title) => {
     const newTodo = {
@@ -64,8 +68,8 @@ export default class TodoContainer extends Component {
 
   render() {
     return (
-      <div className='container'>
-        <div className='inner'>
+      <div className="container">
+        <div className="inner">
           <Header />
           <InputTodo addNewTodoProps={this.addNewTodo} />
           <TodosList
