@@ -23,9 +23,11 @@ const TodosList = (props) => {
 };
 
 TodosList.propTypes = {
-  todos: PropTypes.shape([]).isRequired,
-  handleChangesProp: PropTypes.func.isRequired,
-  handleDeleteTodo: PropTypes.func.isRequired,
+  handleChangesProp: PropTypes.any,
+  handleDeleteTodo: PropTypes.any,
+  todos: PropTypes.shape({
+    map: PropTypes.func
+  }),
 };
 
 export default TodosList;
