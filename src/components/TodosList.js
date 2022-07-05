@@ -23,11 +23,11 @@ const TodosList = (props) => {
 };
 
 TodosList.propTypes = {
-  handleChangesProp: PropTypes.any,
-  handleDeleteTodo: PropTypes.any,
+  handleChangesProp: PropTypes.func.isRequired,
+  handleDeleteTodo: PropTypes.func.isRequired,
   todos: PropTypes.shape({
-    map: PropTypes.func
-  }),
+    map: PropTypes.func,
+  }).isRequired,
 };
 
 export default TodosList;

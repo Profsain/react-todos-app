@@ -29,13 +29,13 @@ const TodosItem = (props) => {
 };
 
 TodosItem.propTypes = {
-  handleChangeProp: PropTypes.func,
-  handleDeleteTodo: PropTypes.func,
+  handleChangeProp: PropTypes.func.isRequired,
+  handleDeleteTodo: PropTypes.func.isRequired,
   todo: PropTypes.shape({
-    completed: PropTypes.any,
-    id: PropTypes.any,
-    title: PropTypes.any
-  }),
+    completed: PropTypes.bool.isRequired,
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default TodosItem;
