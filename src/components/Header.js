@@ -5,8 +5,8 @@ export default function Header() {
     <div>
       <h1
         style={{
-          fontSize: '6rem',
-          fontWeight: '600',
+          fontSize: '4rem',
+          fontWeight: '800',
           marginBottom: '2rem',
           lineHeight: '1em',
           color: '#e6e4e4',
@@ -14,7 +14,7 @@ export default function Header() {
           textAlign: 'center',
         }}
       >
-        Hello Daily Todos App
+        Daily Todos App
       </h1>
     </div>
   );
